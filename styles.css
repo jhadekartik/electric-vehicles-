@@ -1,0 +1,885 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+header {
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #182848;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+}
+
+.ev-types {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ev-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.ev-card h3 {
+    background-color: #182848;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.animation-container {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ev-diagram {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.ev-body {
+    position: absolute;
+    width: 70%;
+    height: 60%;
+    background-color: #ddd;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.battery {
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    background-color: #4CAF50;
+    bottom: 10%;
+    left: 30%;
+    border-radius: 5px;
+}
+
+.battery-small {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background-color: #4CAF50;
+    bottom: 10%;
+    left: 40%;
+    border-radius: 5px;
+}
+
+.motor {
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    background-color: #2196F3;
+    bottom: 20%;
+    right: 20%;
+    border-radius: 50%;
+}
+
+.engine {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background-color: #FF5722;
+    bottom: 20%;
+    left: 20%;
+    border-radius: 5px;
+}
+
+.fuel-tank {
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    background-color: #9E9E9E;
+    bottom: 10%;
+    left: 10%;
+    border-radius: 5px;
+}
+
+.fuel-cell {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    background-color: #673AB7;
+    bottom: 20%;
+    left: 20%;
+    border-radius: 5px;
+}
+
+.hydrogen-tank {
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    background-color: #03A9F4;
+    bottom: 10%;
+    left: 10%;
+    border-radius: 5px;
+}
+
+.wheels {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.wheel {
+    position: absolute;
+    width: 10%;
+    height: 15%;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.wheel-fl {
+    top: 70%;
+    left: 15%;
+}
+
+.wheel-fr {
+    top: 70%;
+    right: 15%;
+}
+
+.wheel-rl {
+    top: 70%;
+    left: 75%;
+}
+
+.wheel-rr {
+    top: 70%;
+    right: 75%;
+}
+
+.energy-flow {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.play-btn {
+    background-color: #4b6cb7;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.play-btn:hover {
+    background-color: #182848;
+}
+
+.description {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+}
+
+.description ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.component {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.component h3 {
+    background-color: #182848;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.component-animation {
+    height: 150px;
+    background-color: #f0f2f5;
+    position: relative;
+}
+
+.component p {
+    padding: 1rem;
+}
+
+footer {
+    background-color: #182848;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Add this new CSS for component labels */
+.component-label {
+    position: absolute;
+    font-size: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+    font-weight: bold;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Position labels for different components */
+.battery .component-label {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.battery-small .component-label {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.motor .component-label {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.engine .component-label {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fuel-tank .component-label {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fuel-cell .component-label {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hydrogen-tank .component-label {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Add this to the existing media query for larger screens */
+@media (min-width: 768px) {
+    .ev-card {
+        flex-direction: row;
+    }
+    
+    .animation-container {
+        width: 50%;
+    }
+    
+    .description {
+        width: 50%;
+    }
+    
+    .ev-diagram {
+        height: 300px;
+    }
+    
+    .component-label {
+        font-size: 12px;
+    }
+}
+
+/* Technical Content Sections */
+.technical-content {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.content-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+.content-card h3 {
+    background-color: #182848;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+}
+
+.content-animation {
+    height: 180px;
+    background-color: #f0f2f5;
+    position: relative;
+}
+
+.content-details {
+    padding: 1.5rem;
+}
+
+.content-details h4 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #182848;
+}
+
+.content-details ul {
+    padding-left: 1.5rem;
+}
+
+/* Calculator Styles */
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.calculator {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calculator h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #182848;
+    text-align: center;
+}
+
+.calculator-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.input-group input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.calculator button {
+    background-color: #4b6cb7;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.calculator button:hover {
+    background-color: #182848;
+}
+
+.calculator-results {
+    margin-top: 1.5rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    border-left: 4px solid #4b6cb7;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.calculator-explanation {
+    background-color: #f0f2f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.calculator-explanation h3 {
+    margin-top: 0;
+    color: #182848;
+}
+
+/* Quiz Styles */
+.quiz-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.quiz-selector label {
+    font-weight: bold;
+}
+
+.quiz-selector select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+.quiz-selector button {
+    background-color: #4b6cb7;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.quiz-selector button:hover {
+    background-color: #182848;
+}
+
+.quiz-content {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.quiz-question {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.quiz-question h4 {
+    margin-top: 0;
+    color: #182848;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quiz-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.quiz-controls button {
+    background-color: #4b6cb7;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.quiz-controls button:hover {
+    background-color: #182848;
+}
+
+.quiz-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#quiz-results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#quiz-results h3 {
+    margin-top: 0;
+    color: #182848;
+}
+
+#quiz-score {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#quiz-feedback {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.feedback-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.feedback-correct {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left: 4px solid #4CAF50;
+}
+
+.feedback-incorrect {
+    background-color: rgba(244, 67, 54, 0.1);
+    border-left: 4px solid #F44336;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Notebook Section Styles */
+/* Add these styles at the end of your CSS file */
+
+/* Upload Section Styles */
+.upload-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.upload-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.file-input-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-label {
+    background-color: #4b6cb7;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.file-label:hover {
+    background-color: #182848;
+}
+
+#file-name {
+    font-style: italic;
+    color: #666;
+}
+
+.upload-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.upload-options .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.upload-options input,
+.upload-options textarea,
+.upload-options select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.upload-options textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.upload-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.upload-btn:hover {
+    background-color: #388E3C;
+}
+
+.upload-preview {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.upload-preview h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #182848;
+}
+
+#preview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#preview-content img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+    .upload-form {
+        flex-direction: row;
+    }
+    
+    .file-input-container {
+        width: 30%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .upload-options {
+        width: 70%;
+    }
+}
+
+.notebook-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.notebook-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.notebook-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.notebook-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.notebook-item h3 {
+    margin-top: 0;
+    color: #182848;
+}
+
+.notebook-item p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.download-btn {
+    background-color: #4b6cb7;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.download-btn:hover {
+    background-color: #182848;
+}
+
+.download-btn::before {
+    content: '📄';
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .calculator-container {
+        flex-direction: row;
+    }
+    
+    .calculator {
+        width: 60%;
+    }
+    
+    .calculator-explanation {
+        width: 40%;
+    }
+}

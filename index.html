@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Vehicle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Electric Vehicle</h1>
+        <p>Interactive demonstration of how electric vehicles work</p>
+    </header>
+
+    <main>
+        <section class="ev-types">
+            <h2>Main Types of Electric Vehicles</h2>
+            
+            <div class="ev-card" id="bev">
+                <h3>Battery Electric Vehicle (BEV)</h3>
+                <div class="animation-container">
+                    <div class="ev-diagram">
+                        <div class="ev-body">
+                            <div class="battery"><span class="component-label">Battery</span></div>
+                            <div class="motor"><span class="component-label">Motor</span></div>
+                            <div class="wheels">
+                                <div class="wheel wheel-fl"></div>
+                                <div class="wheel wheel-fr"></div>
+                                <div class="wheel wheel-rl"></div>
+                                <div class="wheel wheel-rr"></div>
+                            </div>
+                            <div class="energy-flow"></div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="play-btn" data-target="bev">Demonstrate</button>
+                    </div>
+                </div>
+                <div class="description">
+                    <p>Battery Electric Vehicles run entirely on electricity stored in battery packs that power an electric motor. When depleted, the batteries are recharged using grid electricity from a wall socket or charging station.</p>
+                    <ul>
+                        <li><strong>Power Source:</strong> Battery pack</li>
+                        <li><strong>Range:</strong> Typically 100-300+ miles</li>
+                        <li><strong>Examples:</strong> Tesla Model S, Nissan Leaf, Chevrolet Bolt</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ev-card" id="phev">
+                <h3>Plug-in Hybrid Electric Vehicle (PHEV)</h3>
+                <div class="animation-container">
+                    <div class="ev-diagram">
+                        <div class="ev-body">
+                            <div class="battery"><span class="component-label">Battery</span></div>
+                            <div class="motor"><span class="component-label">Motor</span></div>
+                            <div class="engine"><span class="component-label">Engine</span></div>
+                            <div class="fuel-tank"><span class="component-label">Fuel</span></div>
+                            <div class="wheels">
+                                <div class="wheel wheel-fl"></div>
+                                <div class="wheel wheel-fr"></div>
+                                <div class="wheel wheel-rl"></div>
+                                <div class="wheel wheel-rr"></div>
+                            </div>
+                            <div class="energy-flow"></div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="play-btn" data-target="phev">Demonstrate</button>
+                    </div>
+                </div>
+                <div class="description">
+                    <p>PHEVs have both an electric motor and an internal combustion engine. They can be charged from an electrical outlet and typically run on electricity for a shorter range before switching to gasoline.</p>
+                    <ul>
+                        <li><strong>Power Source:</strong> Battery pack + Gasoline engine</li>
+                        <li><strong>Electric Range:</strong> Typically 20-50 miles</li>
+                        <li><strong>Examples:</strong> Toyota Prius Prime, Chevrolet Volt, BMW i3 Rex</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ev-card" id="hev">
+                <h3>Hybrid Electric Vehicle (HEV)</h3>
+                <div class="animation-container">
+                    <div class="ev-diagram">
+                        <div class="ev-body">
+                            <div class="battery-small"><span class="component-label">Battery</span></div>
+                            <div class="motor"><span class="component-label">Motor</span></div>
+                            <div class="engine"><span class="component-label">Engine</span></div>
+                            <div class="fuel-tank"><span class="component-label">Fuel</span></div>
+                            <div class="wheels">
+                                <div class="wheel wheel-fl"></div>
+                                <div class="wheel wheel-fr"></div>
+                                <div class="wheel wheel-rl"></div>
+                                <div class="wheel wheel-rr"></div>
+                            </div>
+                            <div class="energy-flow"></div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="play-btn" data-target="hev">Demonstrate</button>
+                    </div>
+                </div>
+                <div class="description">
+                    <p>HEVs combine a gasoline engine with an electric motor. The battery is charged through regenerative braking rather than being plugged in. The electric motor assists the engine during acceleration and at low speeds.</p>
+                    <ul>
+                        <li><strong>Power Source:</strong> Gasoline engine + Small battery</li>
+                        <li><strong>Electric-only Range:</strong> Very limited (1-2 miles)</li>
+                        <li><strong>Examples:</strong> Toyota Prius, Honda Insight, Hyundai Ioniq Hybrid</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ev-card" id="fcev">
+                <h3>Fuel Cell Electric Vehicle (FCEV)</h3>
+                <div class="animation-container">
+                    <div class="ev-diagram">
+                        <div class="ev-body">
+                            <div class="fuel-cell"><span class="component-label">Fuel Cell</span></div>
+                            <div class="hydrogen-tank"><span class="component-label">H₂</span></div>
+                            <div class="battery-small"><span class="component-label">Battery</span></div>
+                            <div class="motor"><span class="component-label">Motor</span></div>
+                            <div class="wheels">
+                                <div class="wheel wheel-fl"></div>
+                                <div class="wheel wheel-fr"></div>
+                                <div class="wheel wheel-rl"></div>
+                                <div class="wheel wheel-rr"></div>
+                            </div>
+                            <div class="energy-flow"></div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="play-btn" data-target="fcev">Demonstrate</button>
+                    </div>
+                </div>
+                <div class="description">
+                    <p>FCEVs use hydrogen gas to power an electric motor. The hydrogen reacts with oxygen in the fuel cell to produce electricity, with water vapor as the only emission.</p>
+                    <ul>
+                        <li><strong>Power Source:</strong> Hydrogen fuel cell</li>
+                        <li><strong>Range:</strong> Typically 300-400 miles</li>
+                        <li><strong>Examples:</strong> Toyota Mirai, Hyundai Nexo, Honda Clarity Fuel Cell</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="components">
+            <h2>Key Components of Electric Vehicles</h2>
+            <div class="component-grid">
+                <div class="component" id="battery">
+                    <h3>Battery Pack</h3>
+                    <div class="component-animation"></div>
+                    <p>Stores electrical energy to power the vehicle. Typically lithium-ion batteries arranged in modules and packs with cooling systems.</p>
+                </div>
+                <div class="component" id="motor">
+                    <h3>Electric Motor</h3>
+                    <div class="component-animation"></div>
+                    <p>Converts electrical energy into mechanical energy to drive the wheels. EVs may use AC induction motors or permanent magnet motors.</p>
+                </div>
+                <div class="component" id="inverter">
+                    <h3>Power Inverter</h3>
+                    <div class="component-animation"></div>
+                    <p>Converts DC electricity from the battery to AC electricity for the motor, controlling speed and torque.</p>
+                </div>
+                <div class="component" id="controller">
+                    <h3>Controller</h3>
+                    <div class="component-animation"></div>
+                    <p>The "brain" that manages power flow, monitors battery status, and optimizes performance.</p>
+                </div>
+                <div class="component" id="charger">
+                    <h3>Onboard Charger</h3>
+                    <div class="component-animation"></div>
+                    <p>Converts AC power from the grid to DC power to charge the battery pack.</p>
+                </div>
+                <div class="component" id="regen">
+                    <h3>Regenerative Braking</h3>
+                    <div class="component-animation"></div>
+                    <p>Recovers energy during braking by using the motor as a generator to recharge the battery.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="technical-content" id="motor-types">
+            <h2>Types of Electric Motors for EVs</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Permanent Magnet Synchronous Motor (PMSM)</h3>
+                    <div class="content-animation" id="pmsm-animation"></div>
+                    <div class="content-details">
+                        <p>PMSMs use permanent magnets embedded in the rotor to create a constant magnetic field. They offer high efficiency, power density, and excellent torque characteristics.</p>
+                        <ul>
+                            <li><strong>Efficiency:</strong> 95-97%</li>
+                            <li><strong>Advantages:</strong> High torque at low speeds, compact size, high power density</li>
+                            <li><strong>Used in:</strong> Tesla Model 3, Nissan Leaf, Chevrolet Bolt</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>AC Induction Motor (ACIM)</h3>
+                    <div class="content-animation" id="acim-animation"></div>
+                    <div class="content-details">
+                        <p>AC induction motors use electromagnetic induction to create torque. They are robust, reliable, and don't require permanent magnets.</p>
+                        <ul>
+                            <li><strong>Efficiency:</strong> 90-95%</li>
+                            <li><strong>Advantages:</strong> Lower cost, robust design, no rare earth magnets</li>
+                            <li><strong>Used in:</strong> Tesla Model S/X (earlier versions), Audi e-tron</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>Switched Reluctance Motor (SRM)</h3>
+                    <div class="content-animation" id="srm-animation"></div>
+                    <div class="content-details">
+                        <p>SRMs operate on the principle of magnetic reluctance. They are simple, robust, and don't require permanent magnets or copper windings on the rotor.</p>
+                        <ul>
+                            <li><strong>Efficiency:</strong> 90-94%</li>
+                            <li><strong>Advantages:</strong> Simple construction, high reliability, low cost</li>
+                            <li><strong>Used in:</strong> Experimental EVs, some hybrid vehicles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="technical-content" id="motor-selection">
+            <h2>Motor Selection and Sizing</h2>
+            <div class="calculator-container">
+                <div class="calculator">
+                    <h3>Motor Power Calculator</h3>
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="vehicle-weight">Vehicle Weight (kg):</label>
+                            <input type="number" id="vehicle-weight" value="1500">
+                        </div>
+                        <div class="input-group">
+                            <label for="acceleration">Desired Acceleration (m/s²):</label>
+                            <input type="number" id="acceleration" value="3">
+                        </div>
+                        <div class="input-group">
+                            <label for="top-speed">Top Speed (km/h):</label>
+                            <input type="number" id="top-speed" value="150">
+                        </div>
+                        <div class="input-group">
+                            <label for="efficiency">Drivetrain Efficiency (%):</label>
+                            <input type="number" id="efficiency" value="90">
+                        </div>
+                        <button id="calculate-power">Calculate</button>
+                    </div>
+                    <div class="calculator-results">
+                        <div class="result-item">
+                            <span>Required Power:</span>
+                            <span id="power-result">-- kW</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Recommended Motor Type:</span>
+                            <span id="motor-recommendation">--</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-explanation">
+                    <h3>How It Works</h3>
+                    <p>The power required for an electric vehicle is calculated based on:</p>
+                    <ul>
+                        <li>Power for acceleration: P = m × a × v</li>
+                        <li>Power to overcome drag: P = 0.5 × ρ × Cd × A × v³</li>
+                        <li>Power to overcome rolling resistance: P = Crr × m × g × v</li>
+                    </ul>
+                    <p>Where:</p>
+                    <ul>
+                        <li>m = vehicle mass (kg)</li>
+                        <li>a = acceleration (m/s²)</li>
+                        <li>v = velocity (m/s)</li>
+                        <li>ρ = air density (kg/m³)</li>
+                        <li>Cd = drag coefficient</li>
+                        <li>A = frontal area (m²)</li>
+                        <li>Crr = rolling resistance coefficient</li>
+                        <li>g = gravitational acceleration (9.81 m/s²)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="technical-content" id="rpm-torque">
+            <h2>RPM and Torque Calculation</h2>
+            <div class="calculator-container">
+                <div class="calculator">
+                    <h3>Motor RPM & Torque Calculator</h3>
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="motor-power">Motor Power (kW):</label>
+                            <input type="number" id="motor-power" value="100">
+                        </div>
+                        <div class="input-group">
+                            <label for="gear-ratio">Gear Ratio:</label>
+                            <input type="number" id="gear-ratio" value="9.73">
+                        </div>
+                        <div class="input-group">
+                            <label for="wheel-diameter">Wheel Diameter (inches):</label>
+                            <input type="number" id="wheel-diameter" value="18">
+                        </div>
+                        <div class="input-group">
+                            <label for="vehicle-speed">Vehicle Speed (km/h):</label>
+                            <input type="number" id="vehicle-speed" value="100">
+                        </div>
+                        <button id="calculate-rpm-torque">Calculate</button>
+                    </div>
+                    <div class="calculator-results">
+                        <div class="result-item">
+                            <span>Motor RPM:</span>
+                            <span id="rpm-result">-- RPM</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Motor Torque:</span>
+                            <span id="torque-result">-- Nm</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Wheel Torque:</span>
+                            <span id="wheel-torque-result">-- Nm</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-explanation">
+                    <h3>Formulas Used</h3>
+                    <p>The relationship between motor RPM, torque, and power:</p>
+                    <ul>
+                        <li>Motor RPM = (Vehicle Speed × Gear Ratio × 336.13) ÷ Wheel Diameter</li>
+                        <li>Motor Torque (Nm) = (Power (kW) × 9550) ÷ RPM</li>
+                        <li>Wheel Torque = Motor Torque × Gear Ratio</li>
+                    </ul>
+                    <p>These calculations help determine the appropriate motor specifications and gearing for desired vehicle performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="technical-content" id="motor-controllers">
+            <h2>Motor Controllers and Mechanical Connections</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Motor Controllers</h3>
+                    <div class="content-animation" id="controller-animation"></div>
+                    <div class="content-details">
+                        <p>Motor controllers regulate the power supplied to the electric motor, controlling speed, torque, and direction. Modern controllers use sophisticated power electronics to optimize efficiency.</p>
+                        <h4>Key Components:</h4>
+                        <ul>
+                            <li><strong>Inverter:</strong> Converts DC from battery to AC for the motor</li>
+                            <li><strong>Microcontroller:</strong> Processes inputs and controls power delivery</li>
+                            <li><strong>Power Transistors:</strong> IGBT or MOSFET switches that control current</li>
+                            <li><strong>Capacitors:</strong> Filter and stabilize voltage</li>
+                            <li><strong>Current Sensors:</strong> Monitor power flow</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>Mechanical Connections</h3>
+                    <div class="content-animation" id="mechanical-animation"></div>
+                    <div class="content-details">
+                        <p>The mechanical system transfers power from the motor to the wheels, adapting speed and torque for optimal performance.</p>
+                        <h4>Common Configurations:</h4>
+                        <ul>
+                            <li><strong>Direct Drive:</strong> Motor connected directly to wheels (no transmission)</li>
+                            <li><strong>Single-Speed Gearbox:</strong> Fixed reduction ratio (most common in EVs)</li>
+                            <li><strong>Multi-Speed Transmission:</strong> Multiple gear ratios for optimized efficiency</li>
+                            <li><strong>Differential:</strong> Allows wheels to rotate at different speeds during turns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="technical-content" id="battery-types">
+            <h2>Battery Cell Types</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Lithium-Ion (Li-ion)</h3>
+                    <div class="content-animation" id="li-ion-animation"></div>
+                    <div class="content-details">
+                        <p>The most common battery type in modern EVs, offering high energy density and long cycle life.</p>
+                        <h4>Subtypes:</h4>
+                        <ul>
+                            <li><strong>NMC (Lithium Nickel Manganese Cobalt Oxide):</strong> High energy density, used in many EVs</li>
+                            <li><strong>LFP (Lithium Iron Phosphate):</strong> Lower energy density but better safety and longevity</li>
+                            <li><strong>NCA (Lithium Nickel Cobalt Aluminum Oxide):</strong> High specific energy, used in Tesla vehicles</li>
+                        </ul>
+                        <p><strong>Energy Density:</strong> 150-265 Wh/kg</p>
+                        <p><strong>Cycle Life:</strong> 1,000-2,000 cycles</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>Nickel-Metal Hydride (NiMH)</h3>
+                    <div class="content-animation" id="nimh-animation"></div>
+                    <div class="content-details">
+                        <p>Used in earlier hybrid vehicles, NiMH batteries offer good reliability but lower energy density than Li-ion.</p>
+                        <p><strong>Energy Density:</strong> 60-120 Wh/kg</p>
+                        <p><strong>Cycle Life:</strong> 500-1,000 cycles</p>
+                        <p><strong>Advantages:</strong> Safer than Li-ion, more tolerant to abuse, lower cost</p>
+                        <p><strong>Disadvantages:</strong> Lower energy density, higher self-discharge rate</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>Lead-Acid</h3>
+                    <div class="content-animation" id="lead-acid-animation"></div>
+                    <div class="content-details">
+                        <p>The oldest rechargeable battery technology, still used in 12V systems and some industrial EVs.</p>
+                        <p><strong>Energy Density:</strong> 30-40 Wh/kg</p>
+                        <p><strong>Cycle Life:</strong> 200-300 cycles</p>
+                        <p><strong>Advantages:</strong> Low cost, reliable, high surge current</p>
+                        <p><strong>Disadvantages:</strong> Heavy, low energy density, shorter lifespan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="technical-content" id="battery-calculations">
+            <h2>Battery Charging and Discharging Calculations</h2>
+            <div class="calculator-container">
+                <div class="calculator">
+                    <h3>Battery Performance Calculator</h3>
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="battery-capacity">Battery Capacity (kWh):</label>
+                            <input type="number" id="battery-capacity" value="75">
+                        </div>
+                        <div class="input-group">
+                            <label for="battery-voltage">Battery Voltage (V):</label>
+                            <input type="number" id="battery-voltage" value="400">
+                        </div>
+                        <div class="input-group">
+                            <label for="charger-power">Charger Power (kW):</label>
+                            <input type="number" id="charger-power" value="11">
+                        </div>
+                        <div class="input-group">
+                            <label for="vehicle-consumption">Energy Consumption (kWh/100km):</label>
+                            <input type="number" id="vehicle-consumption" value="18">
+                        </div>
+                        <button id="calculate-battery">Calculate</button>
+                    </div>
+                    <div class="calculator-results">
+                        <div class="result-item">
+                            <span>Battery Capacity (Ah):</span>
+                            <span id="capacity-ah-result">-- Ah</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Charging Time (0-100%):</span>
+                            <span id="charging-time-result">-- hours</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Range Estimate:</span>
+                            <span id="range-result">-- km</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Energy Density:</span>
+                            <span id="energy-density-result">-- Wh/kg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-explanation">
+                    <h3>Battery Formulas</h3>
+                    <ul>
+                        <li>Capacity (Ah) = Energy (Wh) ÷ Voltage (V)</li>
+                        <li>Charging Time (h) = Battery Capacity (kWh) ÷ Charger Power (kW)</li>
+                        <li>Range (km) = Battery Capacity (kWh) × 100 ÷ Consumption (kWh/100km)</li>
+                        <li>C-Rate = Discharge Current (A) ÷ Capacity (Ah)</li>
+                    </ul>
+                    <p>The C-rate is a measure of the rate at which a battery is discharged relative to its maximum capacity. A 1C rate means the battery will be fully discharged in 1 hour.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Interactive Electric Vehicle Demonstration</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="motor-functions.js"></script>
+    <script src="calculator-functions.js"></script>
+    <!-- Add this before the closing </main> tag -->
+    <section class="upload-section">
+        <h2>Upload Your EV Designs</h2>
+        <div class="upload-container">
+            <div class="upload-description">
+                <p>Share your electric vehicle designs, schematics, or calculations with our community. Supported file types: PDF, JPG, PNG.</p>
+            </div>
+            <div class="upload-form">
+                <div class="file-input-container">
+                    <input type="file" id="file-upload" accept=".pdf,.jpg,.jpeg,.png" class="file-input">
+                    <label for="file-upload" class="file-label">Choose File</label>
+                    <span id="file-name">No file chosen</span>
+                </div>
+                <div class="upload-options">
+                    <div class="input-group">
+                        <label for="upload-title">Title:</label>
+                        <input type="text" id="upload-title" placeholder="Enter a title for your upload">
+                    </div>
+                    <div class="input-group">
+                        <label for="upload-description">Description:</label>
+                        <textarea id="upload-description" placeholder="Describe your design or calculation"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="upload-category">Category:</label>
+                        <select id="upload-category">
+                            <option value="motor-design">Motor Design</option>
+                            <option value="battery-design">Battery Design</option>
+                            <option value="vehicle-concept">Vehicle Concept</option>
+                            <option value="calculations">Performance Calculations</option>
+                        </select>
+                    </div>
+                    <button id="submit-upload" class="upload-btn">Upload Design</button>
+                </div>
+            </div>
+            <div id="upload-preview" class="upload-preview hidden">
+                <h3>Upload Preview</h3>
+                <div id="preview-content"></div>
+            </div>
+        </div>
+    </section>
+    <section class="notebook-section">
+        <h2>Download Study Materials</h2>
+        <div class="notebook-container">
+            <div class="notebook-description">
+                <p>Download comprehensive notes on electric vehicle technology for offline study. Each notebook includes diagrams, formulas, and practical examples.</p>
+            </div>
+            <div class="notebook-options">
+                <div class="notebook-item">
+                    <h3>EV Types and Working Principles</h3>
+                    <p>Detailed explanation of BEV, PHEV, HEV, and FCEV technologies with diagrams.</p>
+                    <button class="download-btn" data-notebook="ev-types">Download Notes</button>
+                </div>
+                <div class="notebook-item">
+                    <h3>Electric Motors in EVs</h3>
+                    <p>Comprehensive guide to motor types, selection criteria, and performance calculations.</p>
+                    <button class="download-btn" data-notebook="motors">Download Notes</button>
+                </div>
+                <div class="notebook-item">
+                    <h3>Battery Technology</h3>
+                    <p>In-depth coverage of battery chemistries, performance metrics, and charging systems.</p>
+                    <button class="download-btn" data-notebook="batteries">Download Notes</button>
+                </div>
+                <div class="notebook-item">
+                    <h3>Complete EV Technology Guide</h3>
+                    <p>All-in-one reference covering all aspects of electric vehicle technology.</p>
+                    <button class="download-btn" data-notebook="complete">Download Complete Guide</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quiz-section" id="quiz-container">
+        <h2>Test Your Knowledge</h2>
+        <div class="quiz-selector">
+            <label for="quiz-topic">Select a Topic:</label>
+            <select id="quiz-topic">
+                <option value="ev-types">EV Types</option>
+                <option value="motor-types">Motor Types</option>
+                <option value="motor-selection">Motor Selection</option>
+                <option value="motor-controllers">Motor Controllers</option>
+                <option value="battery-types">Battery Types</option>
+                <option value="battery-calculations">Battery Calculations</option>
+            </select>
+            <button id="start-quiz">Start Quiz</button>
+        </div>
+        <div class="quiz-content">
+            <div id="quiz-questions"></div>
+            <div class="quiz-controls">
+                <button id="submit-quiz" disabled>Submit Answers</button>
+            </div>
+            <div id="quiz-results" class="hidden">
+                <h3>Your Results</h3>
+                <p>Score: <span id="quiz-score">0</span>/10</p>
+                <div id="quiz-feedback"></div>
+                <button id="retry-quiz">Try Again</button>
+            </div>
+        </div>
+    </section>
+</main>
